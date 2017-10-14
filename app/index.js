@@ -1,14 +1,16 @@
-console.log('Hello World!');
-
 import React from 'react';
 import { render } from 'react-dom';
-import WelcomeMessage from './components/WelcomeMessage.jsx';
+import { BrowserRouter, Link, Route } from 'react-router-dom';
+import WelcomeMessage from './components/App.jsx';
+import Reward from './components/Reward.jsx';
 import SCSS from './styles/app.scss';
 
-const appData = {
-    title: 'World!'
-};
 
 render(
-    <WelcomeMessage data={appData} />, document.getElementById('container')
+  (<BrowserRouter>
+    <div>
+      <Route path="/" component={WelcomeMessage} />
+      <Route path="/reward" component={Reward} />
+    </div>
+  </BrowserRouter>), document.getElementById('container')
 );

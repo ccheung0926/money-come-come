@@ -4,7 +4,7 @@ export default class WelcomeMessage extends React.Component {
     render() {
         return (
             <header>
-                <h1>Hello {this.props.data.title}</h1>
+                <h1>Hello</h1>
             </header>
         )
     }

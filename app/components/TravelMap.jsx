@@ -12,8 +12,8 @@ export default class TravelMap extends React.Component {
                 <Map
                     style="mapbox://styles/mapbox/streets-v9"
                     containerStyle={{
-                    height: "100vh",
-                    width: "100vw"
+                    height: "500px"
+                    // width: "100vw"
                     }}>
                     <Layer
                         type="symbol"

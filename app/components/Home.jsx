@@ -1,9 +1,15 @@
 import React from 'react';
 import TravelMap from "./TravelMap.jsx";
 
+const arr = ['singapore', 'indonesia', 'thailand', 'vietnam'];
 const Home = () => (
     <div className="itinerary">
-      <h1>Customized Itinerary</h1>
+      <div className="image-wrapper">
+        { arr.map(function(url){
+          return <img src={"../app/images/" + url + ".jpg"} key={url} />
+        })
+        }
+      </div>
       <TravelMap />
     </div>
 );

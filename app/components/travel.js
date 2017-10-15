@@ -6,7 +6,7 @@ const travel = [
         "price": "$500"
       },
       {
-        "title": "Vacation in Thailand along with Singapore",
+        "title": "Vacation in Barcelona, Thailand along with Singapore",
         "image": "http://localhost:8080/app/images/thailand.jpg",
         "date": "11/23 - 11/31",
         "price": "$800"

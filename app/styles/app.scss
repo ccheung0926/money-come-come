@@ -4,6 +4,7 @@ body{
 header {
   border-bottom: 1px solid;
   padding-bottom: 30px;
+  padding-left: 10px;
   h1 {
     color: red;
   }
@@ -46,8 +47,12 @@ header {
   display: inline-block;
   float: left;
   margin: 15px 0;
+  a{
+    text-decoration: initial;
+  }
   p{
     margin: 0;
+    color: #fff;
   }
 }
 .travel-map{
@@ -101,4 +106,8 @@ header {
   width: 30%;
   display: inline-block;
   text-align: center;
+}
+
+fieldset{
+  min-height: 500px;
 }

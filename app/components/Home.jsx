@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import TravelMap from "./TravelMap.jsx";
 import travel from "./travel.js";
 import DatePicker from 'react-datepicker';
+import { Link } from 'react-router-dom';
 
 
 class Home extends Component  {
@@ -33,9 +34,11 @@ class Home extends Component  {
                 { travel.map(function(data, i){
                   return (
                     <div key={i} className="image-wrapper">
-                      <img src={data.image} />
-                      <p>{data.title}</p>
-                      <p>{data.date} {data.price}</p>
+                      <Link to={`/booking`}>
+                        <img src={data.image} />
+                        <p>{data.title}</p>
+                        <p>{data.date} {data.price}</p>
+                      </Link>
                     </div>
                   )
                 })

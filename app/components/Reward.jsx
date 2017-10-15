@@ -11,7 +11,7 @@ export default class Reward extends React.Component {
                   <div key={i} className="gift">
                     <img src={item.image} />
                     <p className="title">{item.title}</p>
-                    <p>Point: {item.point}</p>
+                    <p>Points: {item.point}</p>
                   </div>
                 )
               })

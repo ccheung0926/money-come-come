@@ -40,16 +40,6 @@ export default class Booking extends React.Component {
                   defaultValue="Cindy"
                   type="text"
                 />
-              </GridTile>
-              <GridTile>
-                <TextField
-                  hintText="Last Name"
-                  floatingLabelText="Last Name"
-                  defaultValue="Cheung"
-                  type="text"
-                />
-              </GridTile>
-              <GridTile>
                 <TextField
                   hintText="Email"
                   floatingLabelText="Email"
@@ -58,6 +48,12 @@ export default class Booking extends React.Component {
                 />
               </GridTile>
               <GridTile>
+                <TextField
+                  hintText="Last Name"
+                  floatingLabelText="Last Name"
+                  defaultValue="Cheung"
+                  type="text"
+                />
                 <TextField
                   hintText="Date of birth"
                   floatingLabelText="Date of birth"
@@ -73,23 +69,20 @@ export default class Booking extends React.Component {
                   type="text"
                 />
               </GridTile>
+              <GridTile></GridTile>
               <GridTile>
-                <TextField
+               <TextField
                   hintText="Departure"
                   floatingLabelText="Departure"
                   defaultValue="SFO 11/7/2017"
                   type="text"
                 />
-              </GridTile>
-              <GridTile>
                 <TextField
                   hintText="1st Stop Departure"
                   floatingLabelText="1st Stop Departure"
                   defaultValue="BCN 11/11/2017"
                   type="text"
                 />
-              </GridTile>
-              <GridTile>
                 <TextField
                   hintText="2nd Stop Departure"
                   floatingLabelText="2nd Stop Departure"
@@ -104,8 +97,6 @@ export default class Booking extends React.Component {
                   defaultValue="BKK 11/24/2017"
                   type="text"
                 />
-              </GridTile>
-              <GridTile>
                 <TextField
                   hintText="Returned"
                   floatingLabelText="Returned"

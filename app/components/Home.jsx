@@ -34,7 +34,7 @@ class Home extends Component  {
     return (
           <div className="itinerary">
             <div onClick={this.customizeClick} className="button home">
-              {this.state.isCustomize ? <p>Special Deal For You</p> : <p>Customized Your Itinerary</p> }
+              {this.state.isCustomize ? <p>Special Deal For You</p> : <p>Customize Your Itinerary</p> }
             </div>
             {
               this.state.isCustomize ? 

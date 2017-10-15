@@ -10,6 +10,7 @@
     "mapbox-gl": "^0.41.0",
     "node-sass": "^4.5.3",
     "react": "^15.6.1",
+    "react-datepicker": "^0.55.0",
     "react-dom": "^15.6.1",
     "react-mapbox-gl": "^2.7.0",
     "react-router": "^4.2.0",

@@ -2,6 +2,14 @@ header {
   h1 {
     color: red;
   }
+  h2{
+    margin: 0;
+    width: 80%;
+    display: inline-block;
+  }
+}
+.user{
+  display: inline-block;
 }
 
 .itinerary {
@@ -15,6 +23,10 @@ header {
   width: 50%;
   display: inline-block;
   float: left;
+  margin-bottom: 15px;
+  p{
+    margin: 0;
+  }
 }
 .travel-map{
   // display: flex;

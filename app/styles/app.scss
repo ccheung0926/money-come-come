@@ -110,4 +110,34 @@ header {
 
 fieldset{
   min-height: 500px;
+  text-align: center;
 }
+
+
+
+// booking
+.booking{
+  section{
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%),url("/app/images/singapore-night.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0 -171px;
+    height: 350px;
+    color: #fff;
+    position: relative;
+  }
+}
+ul{
+  text-align: center;
+  margin: auto;
+  font-size: 35px;
+  position: absolute;
+  right: 37%;
+  top: 50%;
+  li{
+    list-style-type: none;
+    margin-right: 50px;
+    display: inline-block;
+  }
+}
+

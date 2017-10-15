@@ -4,6 +4,13 @@ export default class Booking extends React.Component {
     render() {
         return (
           <div className="booking">
+          <section>
+            <ul>
+              <li className="from">SFO -></li>
+              <li className="to">SIN -></li>
+              <li className="final">BKK</li>
+            </ul>
+          </section>
           <form>
            <fieldset>
             <legend>Booking:</legend>
@@ -11,9 +18,9 @@ export default class Booking extends React.Component {
             Last Name: <input type="text" value="Cheung" /><br />
             Email: <input type="text" value="ccc@siasample.com"/><br />
             Date of birth: <input type="text" value="11/11/2001" /><br />
-            Date: <input type="text" value="11/23/2017 - 11/31/2017" />
-            Departure: <input type="text" value="SFO" />
-            Arrival: <input type="text" value="SIN" />
+            Date: <input type="text" value="11/23/2017 - 11/31/2017" /><br />
+            Departure: <input type="text" value="SFO" /><br />
+            Arrival: <input type="text" value="SIN" /><br />
            </fieldset>
           </form>
           </div>

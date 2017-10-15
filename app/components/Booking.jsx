@@ -6,9 +6,9 @@ export default class Booking extends React.Component {
           <div className="booking">
           <section>
             <ul>
-              <li className="from">SFO -></li>
-              <li className="to">SIN -></li>
-              <li className="final">BKK</li>
+              <li className="from">SFO <i className="fa fa-plane" aria-hidden="true"></i></li>
+              <li className="to">SIN <i className="fa fa-plane" aria-hidden="true"></i></li>
+              <li className="final">BKK <i className="fa fa-plane" aria-hidden="true"></i></li>
             </ul>
           </section>
           <form>

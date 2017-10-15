@@ -14,7 +14,7 @@ export default class Booking extends React.Component {
       },
       gridList: {
         marginLeft: 100,
-        width: 600,
+        width: 600
       },
     };
     return (
@@ -70,13 +70,23 @@ export default class Booking extends React.Component {
                 />
               </GridTile>
               <GridTile></GridTile>
-              <GridTile>
-               <TextField
+              <GridTile>               
+                <TextField
                   hintText="Departure"
                   floatingLabelText="Departure"
                   defaultValue="SFO 11/7/2017"
                   type="text"
                 />
+              </GridTile>
+              <GridTile>
+              <TextField
+                  hintText="Returned"
+                  floatingLabelText="Returned"
+                  defaultValue="SFO 11/31/2017"
+                  type="text"
+                />
+              </GridTile>
+              <GridTile>
                 <TextField
                   hintText="1st Stop Departure"
                   floatingLabelText="1st Stop Departure"
@@ -95,12 +105,6 @@ export default class Booking extends React.Component {
                   hintText="3rd Stop Departure"
                   floatingLabelText="3rd Stop Departure"
                   defaultValue="BKK 11/24/2017"
-                  type="text"
-                />
-                <TextField
-                  hintText="Returned"
-                  floatingLabelText="Returned"
-                  defaultValue="SFO 11/31/2017"
                   type="text"
                 />
               </GridTile>

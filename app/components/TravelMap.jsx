@@ -120,7 +120,7 @@ export default class TravelMap extends React.Component {
                             zoom={[3]}
                             containerStyle={{
                                 height: "100vh",
-                                width: "40%"
+                                width: "100%"
                             }}>
                         </Map>
                     )

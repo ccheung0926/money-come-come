@@ -11,7 +11,6 @@ class Home extends Component  {
     this.state = {isCustomize: false, moved: false};
     this.customizeClick = this.customizeClick.bind(this);
     this.handleOnMouseEnter = this.handleOnMouseEnter.bind(this);
-    this.handleOnMouseLeave = this.handleOnMouseLeave.bind(this);
   }
   customizeClick() {
     if(this.state.isCustomize){
@@ -29,12 +28,6 @@ class Home extends Component  {
     });
   }
 
-  handleOnMouseLeave(e) {
-    e.preventDefault();    
-    this.setState({
-      moved: false
-    });
-  }
 
   render() {
     var that = this;
@@ -52,7 +45,7 @@ class Home extends Component  {
                 { travel.map(function(data, i){
                   return (
                     <div key={i} className="image-wrapper">
-                      <Link to={`/booking`} onMouseEnter={that.handleOnMouseEnter} onMouseLeave={that.handleOnMouseLeave}>
+                      <Link to={`/booking`} onMouseEnter={that.handleOnMouseEnter}>
                         <img src={data.image} />
                         <p>{data.title}</p>
                         <p>{data.date} {data.price}</p>

@@ -1,8 +1,10 @@
 header {
+  border-bottom: 1px solid;
+  padding-bottom: 30px;
   h1 {
     color: red;
   }
-  h2{
+  .h2{
     width: 80%;
     display: inline-block;
   }
@@ -10,6 +12,17 @@ header {
     margin: 0;
     padding: 10px 0;
   }
+  input{
+    width: 21%;
+    padding: 5px 3px;
+  }
+}
+.header-left{
+  float: left;
+  width: 80%;
+}
+.referral{
+  margin: 0;
 }
 .user{
   display: inline-block;

@@ -17,6 +17,10 @@
     <script>
 
         function travelMap() {
+            var SFO = [-122.414, 37.776];
+            var SIN = [103.992, 1.364];
+            var BNK = [100.7501, 13.6900];
+            var BCN = [2.0833, 41.2974];
             mapboxgl.accessToken = 'pk.eyJ1IjoicGFuZGFmaXJlYmFsbCIsImEiOiJjajhyeWM2NzUwMms2MzJwMHB5Y2Zqb2E3In0.Jsw5PfO81DtWY3AIpC-Zrw';
             var map = new mapboxgl.Map({
                 container: 'map',
@@ -24,10 +28,6 @@
                 center: [-6.910864, 27.155919],
                 zoom: 1
             });
-            var SFO = [-122.414, 37.776];
-            var SIN = [103.992, 1.364];
-            var BNK = [100.7501, 13.6900];
-            var BCN = [2.0833, 41.2974];
             var route = {
                 "type": "FeatureCollection",
                 "features": [{

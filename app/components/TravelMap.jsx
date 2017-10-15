@@ -117,7 +117,8 @@ export default class TravelMap extends React.Component {
                     this.props.moved ? window.travelMap() : (
                         <Map
                             style="mapbox://styles/mapbox/streets-v9"
-                            zoom={[3]}
+                            zoom={[7]}
+                            center={[103.992, 1.364]}
                             containerStyle={{
                                 height: "100vh",
                                 width: "100%"

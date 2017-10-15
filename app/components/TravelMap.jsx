@@ -114,7 +114,7 @@ export default class TravelMap extends React.Component {
         return (
             <div id="map">
                 {
-                    this.props.clicked ? window.travelMap() : (
+                    this.props.moved ? window.travelMap() : (
                         <Map
                             style="mapbox://styles/mapbox/streets-v9"
                             zoom={[3]}

@@ -8,8 +8,10 @@ import { Link } from 'react-router-dom';
 class Home extends Component  {
   constructor(props) {
     super(props);
-    this.state = {isCustomize: false};
+    this.state = {isCustomize: false, moved: false};
     this.customizeClick = this.customizeClick.bind(this);
+    this.handleOnMouseEnter = this.handleOnMouseEnter.bind(this);
+    this.handleOnMouseLeave = this.handleOnMouseLeave.bind(this);
   }
   customizeClick() {
     if(this.state.isCustomize){
@@ -20,7 +22,22 @@ class Home extends Component  {
     }
   }
 
+  handleOnMouseEnter(e) {
+    e.preventDefault();
+    this.setState({
+      moved: true
+    });
+  }
+
+  handleOnMouseLeave(e) {
+    e.preventDefault();    
+    this.setState({
+      moved: false
+    });
+  }
+
   render() {
+    var that = this;
     return (
           <div className="itinerary">
             <div onClick={this.customizeClick} className="button home">
@@ -35,7 +52,7 @@ class Home extends Component  {
                 { travel.map(function(data, i){
                   return (
                     <div key={i} className="image-wrapper">
-                      <Link to={`/booking`}>
+                      <Link to={`/booking`} onMouseEnter={that.handleOnMouseEnter} onMouseLeave={that.handleOnMouseLeave}>
                         <img src={data.image} />
                         <p>{data.title}</p>
                         <p>{data.date} {data.price}</p>
@@ -48,7 +65,7 @@ class Home extends Component  {
             }
             
             
-          <TravelMap clicked={this.state.isCustomize}/>
+          <TravelMap moved={this.state.moved}/>
         </div>
       )
   }

@@ -28,6 +28,50 @@
             var SIN = [103.992, 1.364];
             var BNK = [100.7501, 13.6900];
             var BCN = [2.0833, 41.2974];
+            var route = {
+                "type": "FeatureCollection",
+                "features": [{
+                    "type": "Feature",
+                    "geometry": {
+                        "type": "LineString",
+                        "coordinates": [
+                            SFO,
+                            BCN,
+                            SIN,
+                            BNK
+                        ]
+                    }
+                }]
+            }
+
+            // A single point that animates along the route.
+            // Coordinates are initially set to origin.
+            var point = {
+                "type": "FeatureCollection",
+                "features": [{
+                    "type": "Feature",
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": SFO
+
+                    }
+                }]
+            }
+
+            // Calculate the distance in kilometers between route start/end point.
+            var lineDistance = turf.lineDistance(route.features[0], 'kilometers');
+
+            var arc = [];
+
+            for (var i = 0; i < lineDistance; i++) {
+                var segment = turf.along(route.features[0], i * 50, 'kilometers');
+                arc.push(segment.geometry.coordinates);
+            }
+
+            route.features[0].geometry.coordinates = arc;
+
+            var counter = 0;
+
             map.on('load', function () {
 
                 map.addLayer({
@@ -88,25 +132,20 @@
                         "text-anchor": "top"
                     }
                 });
+
+                map.addSource('point', {
+                    "type": "geojson",
+                    "data": point
+                });
+                map.addSource('route', {
+                    "type": "geojson",
+                    "data": route
+                });
+
                 map.addLayer({
                     "id": "route",
                     "type": "line",
-                    "source": {
-                        "type": "geojson",
-                        "data": {
-                            "type": "Feature",
-                            "properties": {},
-                            "geometry": {
-                                "type": "LineString",
-                                "coordinates": [
-                                   SFO,
-                                   BCN,
-                                    SIN,
-                                   BNK
-                                ]
-                            }
-                        }
-                    },
+                    "source": "route",
                     "layout": {
                         "line-join": "round",
                         "line-cap": "round"
@@ -117,7 +156,38 @@
                         'line-opacity': .8
                     }
                 });
+                map.addLayer({
+                    "id": "point",
+                    "source": "point",
+                    "type": "symbol",
+                    "layout": {
+                        "icon-image": "airport-15",
+                        "icon-rotate": 90,
+                        "icon-size": 2.0
+                    }
+                });
+    
+                function animate() {
+                    // Update point geometry to a new position based on counter denoting
+                    // the index to access the arc.
+                    point.features[0].geometry.coordinates = route.features[0].geometry.coordinates[counter];
+    
+                    // Update the source with this new data.
+                    map.getSource('point').setData(point);
+    
+                    // Request the next frame of animation so long as destination has not
+                    // been reached.
+                    if (point.features[0].geometry.coordinates[0] !== BNK[0]) {
+                        requestAnimationFrame(animate);
+                    }
+    
+                    counter = counter + 1;
+                }
+
+                animate(counter);
             });
+            
+
     
             // // San Francisco
             // // var origin = [-0.554, 38.275];

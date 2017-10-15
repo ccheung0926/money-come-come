@@ -10,9 +10,6 @@ const Map = ReactMapboxGl({
 export default class TravelMap extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            clicked: false
-        };
     }
 
     // componentWillMount() {
@@ -109,12 +106,6 @@ export default class TravelMap extends React.Component {
 
     //     counter = counter + 1;
     // }
-    handleOnClick(e) {
-        e.preventDefault();
-        this.setState({
-            clicked: true
-        });
-    }
 
     // componentDidMount() {
     //     window.travelMap(window.map);
@@ -123,7 +114,7 @@ export default class TravelMap extends React.Component {
         return (
             <div id="map">
                 {
-                    this.state.clicked ? window.travelMap() : (
+                    this.props.clicked ? window.travelMap() : (
                         <Map
                             style="mapbox://styles/mapbox/streets-v9"
                             zoom={[3]}

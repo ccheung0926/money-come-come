@@ -19,6 +19,7 @@ class Home extends Component  {
        this.setState({isCustomize: true})
     }
   }
+
   render() {
     return (
           <div className="itinerary">
@@ -47,7 +48,7 @@ class Home extends Component  {
             }
             
             
-          <TravelMap />
+          <TravelMap clicked={this.state.isCustomize}/>
         </div>
       )
   }

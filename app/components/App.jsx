@@ -1,7 +1,7 @@
 import React from 'react';
 import Main from './Main.jsx';
 import { Link } from 'react-router-dom';
-
+import TextField from 'material-ui/TextField';
 
 const App = () => {
     return (
@@ -9,8 +9,12 @@ const App = () => {
             <header>
             <div className="header-left">
                 <h2 className="h2">Booking Go</h2>
-                <h2 className="referral">Referral Your Friend:</h2>
-                <input value="https://youtu.be/ewzY-vXJAsU" />
+                <TextField
+                  hintText="Friend"
+                  floatingLabelText="Refer Your Friend"
+                  defaultValue="https://youtu.be/ewzY-vXJAsU"
+                  type="text"
+                />
             </div>
             <div className="user">
                 <p>Welcome back! Cindy</p>

@@ -1,11 +1,10 @@
 import React from 'react';
+import Main from './Main.jsx';
 
-export default class WelcomeMessage extends React.Component {
-    render() {
-        return (
-            <header>
-                <h1>Hello</h1>
-            </header>
-        )
-    }
-}
+
+const App = () => (
+  <div>
+    <Main />
+  </div>
+)
+export default App

@@ -1,13 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Reward extends Component {
-  render() {
-    return (
-      <div className="reward">
-        <div>Reward page</div>
-      </div>
-    );
-  }
+export default class Reward extends React.Component {
+    render() {
+        return (
+          <h1>Reward</h1>
+        )
+    }
 }
-
-export default Reward;

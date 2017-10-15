@@ -3,6 +3,8 @@ import { Switch, Route } from 'react-router-dom';
 import Reward from './Reward.jsx';
 import Home from './Home.jsx';
 import Booking from './Booking.jsx';
+import Next from './Next.jsx';
+import Mike from './Mike.jsx';
 
 // The Main component renders one of the three provided
 // Routes (provided that one matches). Both the /roster
@@ -15,6 +17,8 @@ const Main = () => (
       <Route exact path='/' component={Home}/>
       <Route path='/reward' component={Reward}/>
       <Route path='/booking' component={Booking}/>
+      <Route path='/next' component={Next} />
+      <Route path='/mike' component={Mike} />
     </Switch>
   </div>
 )

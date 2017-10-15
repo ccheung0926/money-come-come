@@ -1,27 +1,19 @@
 import React from 'react';
-// import ReactMapboxGl, { Layer, Feature, Source } from "react-mapbox-gl";
+import ReactMapboxGl, { Layer, Feature, Source } from "react-mapbox-gl";
 // import along from "turf-along";
 // import turfLineDistance from "turf-line-distance";
 
-// const Map = ReactMapboxGl({
-//   accessToken: "pk.eyJ1IjoicGFuZGFmaXJlYmFsbCIsImEiOiJjajhyeWM2NzUwMms2MzJwMHB5Y2Zqb2E3In0.Jsw5PfO81DtWY3AIpC-Zrw"
-// });
+const Map = ReactMapboxGl({
+  accessToken: "pk.eyJ1IjoicGFuZGFmaXJlYmFsbCIsImEiOiJjajhyeWM2NzUwMms2MzJwMHB5Y2Zqb2E3In0.Jsw5PfO81DtWY3AIpC-Zrw"
+});
 
 export default class TravelMap extends React.Component {
-    // constructor(props) {
-    //     super(props);
-    //     this.state = {
-    //         origin: [-122.414, 37.776],
-    //         destination: [-77.032, 38.913],
-    //         route: {},
-    //         point: {},
-    //         lineDistance: null,
-    //         arc: [],
-    //         routeJson: {},
-    //         pointJson: {},
-    //         counter: 0
-    //     };
-    // }
+    constructor(props) {
+        super(props);
+        this.state = {
+            clicked: false
+        };
+    }
 
     // componentWillMount() {
     //     this.setState({route: {
@@ -117,47 +109,31 @@ export default class TravelMap extends React.Component {
 
     //     counter = counter + 1;
     // }
-
-    componentDidMount() {
-        window.travelMap();
+    handleOnClick(e) {
+        e.preventDefault();
+        this.setState({
+            clicked: true
+        });
     }
+
+    // componentDidMount() {
+    //     window.travelMap(window.map);
+    // }
     render() {
         return (
             <div id="map">
-                {/* <Map
-                    style="mapbox://styles/mapbox/streets-v9"
-                    zoom={[3]}
-                    containerStyle={{
-                        height: "100vh",
-                        width: "100vw"
-                    }}>
-                    <Source id="source_route" geoJsonSource={RASTER_SOURCE_OPTIONS} />
-                    <Source id="source_point" geoJsonSource={RASTER_SOURCE_OPTIONS} />
-                    <Layer
-                        id="route"
-                        sourceId="route"
-                        type="line"
-                        paint={{
-                            "line-width": 2,
-                            "line-color": "#007cbf"
-                         }}>
-                     </Layer>
-                    <Layer
-                        id="point"
-                        sourceId="point"
-                        type="symbol"
-                        paint={{
-                            "icon-image": "airport-15",
-                            "icon-rotate": 90
-                         }}>
-                     </Layer>
-                    <Layer
-                        type="symbol"
-                        id="marker"
-                        layout={{ "icon-image": "marker-15" }}>
-                        <Feature coordinates={[-96, 37.8]}/>
-                    </Layer>
-                </Map> */}
+                {
+                    this.state.clicked ? window.travelMap() : (
+                        <Map
+                            style="mapbox://styles/mapbox/streets-v9"
+                            zoom={[3]}
+                            containerStyle={{
+                                height: "100vh",
+                                width: "40%"
+                            }}>
+                        </Map>
+                    )
+                }
             </div>
         )
     }

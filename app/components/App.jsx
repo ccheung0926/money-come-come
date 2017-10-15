@@ -14,7 +14,7 @@ const App = () => (
       <div className="user">
         <p>Welcome back! Cindy</p>
         Points: 1000 points
-        <p className="button"><Link to={`/reward`}>Redeem Your Gift </Link></p>
+        <p className="button header-btn"><Link to={`/reward`}>Redeem Your Gift </Link></p>
       </div>
     </header>
     <Main />

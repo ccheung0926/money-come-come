@@ -21,7 +21,7 @@ class Home extends Component  {
   render() {
     return (
           <div className="itinerary">
-            <div onClick={this.customizeClick} className="button">
+            <div onClick={this.customizeClick} className="button home">
               {this.state.isCustomize ? <p>Special Deal For You</p> : <p>Customized Your Itinerary</p> }
             </div>
             {
